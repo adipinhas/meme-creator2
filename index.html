@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/font-awesome.css"> -->
+    <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+</head>
+
+<body onload="init()">
+    <header class="nav-bar">
+        <img src="img/icons/LOGO.png" alt="">
+        <ul>
+            <li>gallery</li>
+            <li>memes</li>
+            <li>about</li>
+        </ul>
+        <div class="borgers">
+            <div class="borger"></div>
+            <div class="borger"></div>
+            <div class="borger"></div>
+        </div>
+
+    </header>
+    <div class="display-none divcanvas">
+        <canvas id="memeCanvas" onmouseout="mouseUp()" onmousemove="onMoveText(event)"
+         onmousedown="mouseDown()" onmouseup="mouseUp()"
+         ontouchstart="mouseDown()" ontouchmove="onMoveText(event)"
+         ontouchend="mouseUp()">
+
+        </canvas>
+        <div class="edit-canvas">
+            <div class="text">
+                <input class="input-text" id="inputTextUpper" type="text" onkeyup="onSetTxtMeme();">
+            </div>
+
+            <div class="buttons">
+                <input type="color" name="" id="choose-font-color" class="color-button" onchange="onChangeColor()">
+                <label for="choose-font-color"><img src="img/icons/paint-board-and-brush.png" alt=""></label>
+                <img onclick="onIncSize()" src="img/icons/increase font - icon.png" alt="">
+                <img onclick="onDecreaseSize()" src="img/icons/decrease font - icon.png" alt="">
+                <img onclick="onSwitch()" src="img/icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="">
+                <img onclick="onTextUp()" src="img/icons/up.png" alt="">
+                <img onclick="onTextDown()" src="img/icons/down.png" alt="">
+                <img src="img/icons/align-to-left.png" alt="">
+                <img src="img/icons/center-text-alignment.png" alt="">
+                <img src="img/icons/facebook-logo.png" alt="">
+                <img src="img/icons/github-logo.png" alt="">
+                <img src="img/icons/add.png" alt="">
+                <img src="img/icons/align-to-right.png" alt="">
+                <img src="img/icons/text stroke.png" alt="">
+                <img src="img/icons/trash.png" alt="">
+
+
+                <select class="select-font">
+                    <option value="impact">impact</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+
+
+            </div>
+            <button onclick="changeImage()" class="share-button">change image</button>
+            <button class="share-button">share</button>
+        </div>
+
+    </div>
+    <div class="container">
+
+        <!-- <img src="img/003.jpg" onclick="imgToCanvas('img/003.jpg')" alt="">
+        <img src="img/004.jpg" onclick="imgToCanvas('img/004.jpg')" alt="">
+        <img src="img/006.jpg" onclick="imgToCanvas('img/006.jpg')" alt="">
+        <img src="img/5.jpg" onclick="imgToCanvas('img/5.jpg')" alt=""> -->
+    </div>
+
+    <script src="js/service.js"></script>
+    <script src="js/controller.js"></script>
+</body>
+
+</html>
