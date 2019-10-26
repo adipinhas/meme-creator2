@@ -128,8 +128,8 @@ function addLine() {
     if (addCount === 1) {
         gMeme.txts.splice(gMeme.selectedTxtIdx, 0,
             {
-                line: 'I never eat Falafel',
-                size: 26, align: 'left',
+                line: 'text',
+                size: 30, align: 'left',
                 color: 'white',
                 outLineColor: 'black',
                 height: 40,
@@ -141,8 +141,8 @@ function addLine() {
         if(addCount===2){
             gMeme.txts.splice(gMeme.selectedTxtIdx, 0,
                 {
-                    line: 'I never eat Falafel',
-                    size: 26, align: 'left',
+                    line: 'text',
+                    size: 30, align: 'left',
                     color: 'white',
                     outLineColor: 'black',
                     height: 240,
@@ -152,8 +152,8 @@ function addLine() {
         }else{
             gMeme.txts.splice(gMeme.selectedTxtIdx, 0,
                 {
-                    line: 'I never eat Falafel',
-                    size: 26, align: 'left',
+                    line: 'text',
+                    size: 30, align: 'left',
                     color: 'white',
                     outLineColor: 'black',
                     height: 130,
