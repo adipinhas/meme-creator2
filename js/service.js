@@ -29,27 +29,29 @@ var gImgs = [{ id: 0, url: 'img/1.jpg', keywords: ['happy'] },
 var gMeme = {
     selectedImgId: 5, selectedTxtIdx: 0,
 
-    txts: [{
-        line: 'I never eat Falafel',
-        size: 26, align: 'left',
-        color: 'red',
-        outLineColor:'black',
-        height: 40,
-        width: 150,
-        font:'IMPACT'
+    txts: [
+    //     {
+    //     line: 'I never eat Falafel',
+    //     size: 26, align: 'left',
+    //     color: 'red',
+    //     outLineColor: 'black',
+    //     height: 40,
+    //     width: 150,
+    //     font: 'IMPACT'
 
-    },
-    {
-        line: 'I never eat Falafel',
-        size: 26, align: 'left',
-        color: 'white',
-        outLineColor:'black',
-        height: 230,
-        width: 150,
-        font:'IMPACT'
-    }
+    // },
+        // {
+        //     line: 'I never eat Falafel',
+        //     size: 26, align: 'left',
+        //     color: 'white',
+        //     outLineColor:'black',
+        //     height: 230,
+        //     width: 150,
+        //     font:'IMPACT'
+        // }
     ]
 }
+var addCount =1
 var TxtUpOrDown;
 
 function getImgs() {
@@ -87,11 +89,11 @@ function getTxtUpOrDown() {
     return TxtUpOrDown
 }
 function switchTxt() {
-    if( gMeme.selectedTxtIdx===gMeme.txts.length-1){
-        gMeme.selectedTxtIdx=0
-    }else{
+    if (gMeme.selectedTxtIdx === gMeme.txts.length - 1) {
+        gMeme.selectedTxtIdx = 0
+    } else {
 
-        gMeme.selectedTxtIdx ++
+        gMeme.selectedTxtIdx++
     }
 }
 function getGNumTxt() {
@@ -120,19 +122,55 @@ function textDown() {
 }
 function deleteLine() {
     gMeme.txts.splice(gMeme.selectedTxtIdx, 1)
+    gMeme.selectedTxtIdx = 0
 }
 function addLine() {
-    gMeme.txts.splice(gMeme.selectedTxtIdx, 0, {
-        line: 'I never eat Falafel',
-        size: 26, align: 'left',
-        color: 'red',
-        height:120,
-        width: 150
-    })
-}   
-function selectFont(elFont){
-   gMeme.txts[gMeme.selectedTxtIdx].font=elFont
+    if (addCount === 1) {
+        gMeme.txts.splice(gMeme.selectedTxtIdx, 0,
+            {
+                line: 'I never eat Falafel',
+                size: 26, align: 'left',
+                color: 'white',
+                outLineColor: 'black',
+                height: 40,
+                width: 150,
+                font:'impact'
+            })
+
+    }else{
+        if(addCount===2){
+            gMeme.txts.splice(gMeme.selectedTxtIdx, 0,
+                {
+                    line: 'I never eat Falafel',
+                    size: 26, align: 'left',
+                    color: 'white',
+                    outLineColor: 'black',
+                    height: 240,
+                    width: 150,
+                    font:'impact'
+                })
+        }else{
+            gMeme.txts.splice(gMeme.selectedTxtIdx, 0,
+                {
+                    line: 'I never eat Falafel',
+                    size: 26, align: 'left',
+                    color: 'white',
+                    outLineColor: 'black',
+                    height: 130,
+                    width: 150,
+                    font:'impact'
+                })
+        }
+    }
+    addCount++;
 }
-function getSelectedTxtId(){
+function selectFont(elFont) {
+    gMeme.txts[gMeme.selectedTxtIdx].font = elFont
+}
+function getSelectedTxtId() {
     return gMeme.selectedTxtIdx
+}
+function outLineColor(color){
+    gMeme.txts[gMeme.selectedTxtIdx].outLineColor=color
+
 }

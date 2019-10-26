@@ -41,6 +41,8 @@
             <div class="buttons">
                 <input type="color" name="" id="choose-font-color" class="color-button" onchange="onChangeColor()">
                 <label for="choose-font-color"><img src="img/icons/paint-board-and-brush.png" alt=""></label>
+                <input type="color" name="" id="choose-out-line" class="color-button" onchange="onOutlineColor()">
+                <label for="choose-out-line"><img src="img/icons/text stroke.png" alt=""></label>
                 <img onclick="onIncSize()" src="img/icons/increase font - icon.png" alt="">
                 <img onclick="onDecreaseSize()" src="img/icons/decrease font - icon.png" alt="">
                 <img onclick="onSwitch()" src="img/icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="">
@@ -52,15 +54,15 @@
                 <img src="img/icons/facebook-logo.png" alt="">
                 <img src="img/icons/github-logo.png" alt=""> -->
                 <img onclick=" onAddLine()" src="img/icons/add.png" alt="">
-                <!-- <img src="img/icons/align-to-right.png" alt="">
-                <img src="img/icons/text stroke.png" alt=""> -->
+                <!-- <img src="img/icons/align-to-right.png" alt=""> -->
+                <!-- <img onclick="onChangeOutline()" src="img/icons/text stroke.png" alt=""> -->
 
 
                 <select onchange="onSelectFont()" class="select-font">
                     <option value="impact">impact</option>
                     <option value="Arial">Arial</option>
+                    <option value="Arial Black">Arial Black</option>
                     <option value="Comic Sans MS">Comic Sans MS</option>
-                    <option value="Palatino Linotype">Palatino Linotype</option>
                 </select>
 
 

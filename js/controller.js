@@ -159,3 +159,12 @@ function onDownloadMeme(){
     var imageToDowload =gCanvas.toDataURL('image/png').replace('image/png','image/octet-stream')
     window.location.href=imageToDowload
 }
+function onOutlineColor(){
+    outLineColor()
+    var chosenColor = (document.querySelector('#choose-out-line').value)
+    outLineColor(chosenColor)
+    drawImg()
+
+    
+}
+
