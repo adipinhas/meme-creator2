@@ -87,7 +87,12 @@ function getTxtUpOrDown() {
     return TxtUpOrDown
 }
 function switchTxt() {
-    gMeme.selectedTxtIdx = 1 - gMeme.selectedTxtIdx
+    if( gMeme.selectedTxtIdx===gMeme.txts.length-1){
+        gMeme.selectedTxtIdx=0
+    }else{
+
+        gMeme.selectedTxtIdx ++
+    }
 }
 function getGNumTxt() {
     return gMeme.selectedTxtIdx
@@ -127,4 +132,7 @@ function addLine() {
 }   
 function selectFont(elFont){
    gMeme.txts[gMeme.selectedTxtIdx].font=elFont
+}
+function getSelectedTxtId(){
+    return gMeme.selectedTxtIdx
 }

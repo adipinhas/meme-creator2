@@ -31,6 +31,7 @@ function drawImg() {
     img.onload = document.querySelector('.divcanvas').classList.remove('display-none')
     img.onload = window.scrollTo(0, 0);
     img.onload = writingOnCanvas()
+    img.onload= drawRect()
    
     //img.onload=writingOnCanvasLower()
 }
@@ -46,8 +47,15 @@ function writingOnCanvas() {
         gCtx.strokeText(txts[i].line, txts[i].width, txts[i].height/1.7)
     }
 }
+function drawRect(){
+    gCtx.beginPath();
+    gCtx.rect(0, (getGmeme().txts[getSelectedTxtId()].height-40)/1.7, gCanvas.width,30 );
+    gCtx.stroke();
+}
 function onSwitch() {
     switchTxt()
+    drawImg()
+    
 }
 function onSetTxtMeme() {
     var inputText = document.querySelector('#inputTextUpper').value;
@@ -149,5 +157,5 @@ function onSelectFont(){
 }
 function onDownloadMeme(){
     var imageToDowload =gCanvas.toDataURL('image/png').replace('image/png','image/octet-stream')
-    window.length.href=imageToDowload
+    window.location.href=imageToDowload
 }
