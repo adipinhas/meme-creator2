@@ -46,36 +46,31 @@
                 <img onclick="onSwitch()" src="img/icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="">
                 <img onclick="onTextUp()" src="img/icons/up.png" alt="">
                 <img onclick="onTextDown()" src="img/icons/down.png" alt="">
+                <img onclick="onDeleteLine()" src="img/icons/trash.png" alt="">
                 <!-- <img src="img/icons/align-to-left.png" alt="">
                 <img src="img/icons/center-text-alignment.png" alt="">
                 <img src="img/icons/facebook-logo.png" alt="">
-                <img src="img/icons/github-logo.png" alt="">
-                <img src="img/icons/add.png" alt="">
-                <img src="img/icons/align-to-right.png" alt="">
-                <img src="img/icons/text stroke.png" alt="">
-                <img src="img/icons/trash.png" alt=""> -->
+                <img src="img/icons/github-logo.png" alt=""> -->
+                <img onclick=" onAddLine()" src="img/icons/add.png" alt="">
+                <!-- <img src="img/icons/align-to-right.png" alt="">
+                <img src="img/icons/text stroke.png" alt=""> -->
 
 
-                <!-- <select class="select-font">
+                <select onchange="onSelectFont()" class="select-font">
                     <option value="impact">impact</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
-                </select> -->
+                    <option value="Arial">Arial</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Palatino Linotype">Palatino Linotype</option>
+                </select>
 
 
             </div>
             <button onclick="changeImage()" class="share-button">change image</button>
-            <!-- <button class="share-button">share</button> -->
+            <button onclick="onDownloadMeme()" class="share-button">save</button>
         </div>
 
     </div>
     <div class="container">
-
-        <!-- <img src="img/003.jpg" onclick="imgToCanvas('img/003.jpg')" alt="">
-        <img src="img/004.jpg" onclick="imgToCanvas('img/004.jpg')" alt="">
-        <img src="img/006.jpg" onclick="imgToCanvas('img/006.jpg')" alt="">
-        <img src="img/5.jpg" onclick="imgToCanvas('img/5.jpg')" alt=""> -->
     </div>
 
     <script src="js/service.js"></script>

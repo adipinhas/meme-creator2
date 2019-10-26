@@ -10,6 +10,7 @@ function init() {
     renderImages()
     gCanvas = document.querySelector('#memeCanvas')
     gCtx = gCanvas.getContext('2d');
+    
 }
 
 function imgToCanvas(imageId) {
@@ -21,7 +22,6 @@ function imgToCanvas(imageId) {
 
 }
 function drawImg() {
-    // debugger
     var memeImgId = getMemeImgId()
     var imgs = getImgs()
     var img = new Image()
@@ -31,22 +31,20 @@ function drawImg() {
     img.onload = document.querySelector('.divcanvas').classList.remove('display-none')
     img.onload = window.scrollTo(0, 0);
     img.onload = writingOnCanvas()
+   
     //img.onload=writingOnCanvasLower()
 }
 function writingOnCanvas() {
 
     var txts = getGmeme().txts
     gCtx.textAlign = "center";
-
-    gCtx.fillStyle = txts[0].color
-    gCtx.strokeStyle='black'
-    gCtx.font = `${txts[0].size}px IMPACT`;
-    gCtx.fillText(txts[0].line, txts[0].width, txts[0].height/1.7)
-
-    gCtx.fillStyle = txts[1].color
-    gCtx.font = `${txts[1].size}px IMPACT`;
-    gCtx.fillText(txts[1].line, txts[1].width, txts[1].height/1.7)
-
+    for(var i=0;i<txts.length;i++){
+        gCtx.fillStyle = txts[i].color
+        gCtx.font = `${txts[i].size}px ${txts[i].font}`;
+        gCtx.strokeStyle=txts[i].outLineColor
+        gCtx.fillText(txts[i].line, txts[i].width, txts[i].height/1.7)
+        gCtx.strokeText(txts[i].line, txts[i].width, txts[i].height/1.7)
+    }
 }
 function onSwitch() {
     switchTxt()
@@ -136,4 +134,20 @@ function onTextUp(){
 function onTextDown(){
     textDown()
     drawImg()
+}
+function onDeleteLine(){
+    deleteLine()
+    drawImg()
+}
+function onAddLine(){
+    addLine()
+    drawImg()
+}
+function onSelectFont(){
+    selectFont(document.querySelector('.select-font').value)
+    drawImg()
+}
+function onDownloadMeme(){
+    var imageToDowload =gCanvas.toDataURL('image/png').replace('image/png','image/octet-stream')
+    window.length.href=imageToDowload
 }
