@@ -23,7 +23,7 @@
 
     </header>
     <div class="display-none divcanvas">
-        <canvas id="memeCanvas" onmouseout="mouseUp()" onmousemove="onMoveText(event)"
+        <canvas height="300px" width="320px" id="memeCanvas" onmouseout="mouseUp()" onmousemove="onMoveText(event)"
          onmousedown="mouseDown()" onmouseup="mouseUp()"
         
          >
@@ -32,6 +32,13 @@
         <div class="edit-canvas">
             <div class="text">
                 <input class="input-text" id="inputTextUpper" type="text" onkeyup="onSetTxtMeme();">
+                <select onchange="onSelectFont()" class="select-font">
+                    <option value="impact">impact</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Arial Black">Arial Black</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                </select>
+                <img class="no-margin" onclick=" onAddLine()" src="img/icons/add.png" alt="">
             </div>
 
             <div class="buttons">
@@ -49,23 +56,19 @@
                 <img src="img/icons/center-text-alignment.png" alt="">
                 <img src="img/icons/facebook-logo.png" alt="">
                 <img src="img/icons/github-logo.png" alt=""> -->
-                <img onclick=" onAddLine()" src="img/icons/add.png" alt="">
                 <!-- <img src="img/icons/align-to-right.png" alt=""> -->
                 <!-- <img onclick="onChangeOutline()" src="img/icons/text stroke.png" alt=""> -->
 
 
-                <select onchange="onSelectFont()" class="select-font">
-                    <option value="impact">impact</option>
-                    <option value="Arial">Arial</option>
-                    <option value="Arial Black">Arial Black</option>
-                    <option value="Comic Sans MS">Comic Sans MS</option>
-                </select>
 
 
             </div>
-            <button onclick="changeImage()" class="share-button">change image</button>
-           
-            <a onclick="onDownloadMeme(this)" id="download" href="#" download="my-meme.jpg">download</a>
+            <div>
+                <button onclick="changeImage()" class="share-button">change image</button>
+               <button class="share-button">
+                   <a onclick="onDownloadMeme(this)" id="download" href="#" download="my-meme.jpg">download</a>
+            </div>
+           </button>
         </div>
 
     </div>

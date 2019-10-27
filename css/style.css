@@ -53,32 +53,61 @@ header ul{
    
 }
 .buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
     
-    
+}
+.text img{
+    height: 30px;
+    width: 30px;
+    background-color: rgb(77, 231, 77);
+    border: black 2px solid;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+.text{
+    display: flex;
+    margin-top: 30px;
+    justify-content:space-around;
+    width: 100%;
+}
 }
 .input-text{
-    margin-top: 30px;
+  
     border-radius: 10px;
     height: 30px;
-    width: 250px;
+    width: 90px;
 }
 .select-font{
-    height: 40px;
+    height: 34px;
     border-radius: 10px;
-    background-color: beige;
+   
     font-family: impact;
     width: auto;
-    background-color: rgb(216, 215, 212);
+    background-color: rgb(255, 255, 255);
     width: 110px;
 }
 
-.edit-canvas img{
+.buttons img{
     height: 40px;
     width: 40px;
     background-color: rgb(216, 215, 212);
     border-radius: 5px;
     margin-top: 15px;
     margin-right: 15px;;
+}
+.edit-canvas button{
+    
+    background-color: rgb(216, 215, 212);
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-right: 15px;;
+}
+.edit-canvas a{
+    color: unset;
+    text-decoration: unset;
 }
 .container{
     display:flex;
@@ -110,6 +139,9 @@ header ul{
     width: 150px;
     margin-top: 15px;
 }
+.no-margin{
+    margin: 0;
+}
 @media only screen and (min-width: 440px){
 
 
@@ -122,13 +154,16 @@ header ul{
     }
 }
 @media only screen and (min-width: 700px){
-    .edit-canvas img{
+    .buttons img{
         height: 70px;
         width: 70px;
         background-color: rgb(216, 215, 212);
         border-radius: 5px;
         margin-top: 15px;
         margin-right: 15px;;
+    }
+    .edit-canvas .button{
+
     }
     .edit-canvas img :hover{
         background-color: rgb(175, 49, 49);
