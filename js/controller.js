@@ -10,15 +10,15 @@ function init() {
     renderImages()
     gCanvas = document.querySelector('#memeCanvas')
     gCtx = gCanvas.getContext('2d');
-    
+
 }
 
 function imgToCanvas(imageId) {
-    setTimeout(function(){
+    setTimeout(function () {
         selectImg(imageId)
         drawImg();
-    },50)
-   
+    }, 50)
+
 
 }
 function drawImg() {
@@ -27,35 +27,35 @@ function drawImg() {
     var img = new Image()
     img.src = imgs[memeImgId].url
     img.onload = gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
-    img.onload=document.querySelector('.container').classList.add('display-none')
+    img.onload = document.querySelector('.container').classList.add('display-none')
     img.onload = document.querySelector('.divcanvas').classList.remove('display-none')
     img.onload = window.scrollTo(0, 0);
     img.onload = writingOnCanvas()
-    img.onload= drawRect()
-   
+    img.onload = drawRect()
+
     //img.onload=writingOnCanvasLower()
 }
 function writingOnCanvas() {
 
     var txts = getGmeme().txts
     gCtx.textAlign = "center";
-    for(var i=0;i<txts.length;i++){
+    for (var i = 0; i < txts.length; i++) {
         gCtx.fillStyle = txts[i].color
         gCtx.font = `${txts[i].size}px ${txts[i].font}`;
-        gCtx.strokeStyle=txts[i].outLineColor
-        gCtx.fillText(txts[i].line, txts[i].width, txts[i].height/1.7)
-        gCtx.strokeText(txts[i].line, txts[i].width, txts[i].height/1.7)
+        gCtx.strokeStyle = txts[i].outLineColor
+        gCtx.fillText(txts[i].line, txts[i].width, txts[i].height / 1.7)
+        gCtx.strokeText(txts[i].line, txts[i].width, txts[i].height / 1.7)
     }
 }
-function drawRect(){
+function drawRect() {
     gCtx.beginPath();
-    gCtx.rect(0, (getGmeme().txts[getSelectedTxtId()].height-40)/1.7, gCanvas.width,30 );
+    gCtx.rect(0, (getGmeme().txts[getSelectedTxtId()].height - 40) / 1.7, gCanvas.width, 30);
     gCtx.stroke();
 }
 function onSwitch() {
     switchTxt()
     drawImg()
-    
+
 }
 function onSetTxtMeme() {
     var inputText = document.querySelector('#inputTextUpper').value;
@@ -114,57 +114,58 @@ function onSetTxtUp() {
 function mouseDown() {
     console.log('boo')
     isMouseDown = true;
-    
+
 }
 function mouseUp() {
     console.log('koo')
     isMouseDown = false;
 }
 function onMoveText(ev) {
-    
+
     ev.preventDefault()
     if (!isMouseDown) {
         return
     }
-    
-    moveText(ev.offsetY,ev.offsetX)
+
+    moveText(ev.offsetY, ev.offsetX)
     drawImg()
 }
-function changeImage(){
+function changeImage() {
     document.querySelector('.container').classList.remove('display-none')
     document.querySelector('.divcanvas').classList.add('display-none')
 
 }
-function onTextUp(){
+function onTextUp() {
     textUp()
     drawImg()
 }
-function onTextDown(){
+function onTextDown() {
     textDown()
     drawImg()
 }
-function onDeleteLine(){
+function onDeleteLine() {
     deleteLine()
     drawImg()
 }
-function onAddLine(){
+function onAddLine() {
     addLine()
     drawImg()
 }
-function onSelectFont(){
+function onSelectFont() {
     selectFont(document.querySelector('.select-font').value)
     drawImg()
 }
-function onDownloadMeme(){
-    var imageToDowload =gCanvas.toDataURL('image/png').replace('image/png','image/octet-stream')
-    window.location.href=imageToDowload
+function onDownloadMeme(elLink) {
+   
+    var imgContent = gCanvas.toDataURL('image/jpeg');
+    elLink.href = imgContent
 }
-function onOutlineColor(){
+function onOutlineColor() {
     outLineColor()
     var chosenColor = (document.querySelector('#choose-out-line').value)
     outLineColor(chosenColor)
     drawImg()
 
-    
+
 }
 

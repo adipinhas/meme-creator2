@@ -14,11 +14,7 @@
 <body onload="init()">
     <header class="nav-bar">
         <img src="img/icons/LOGO.png" alt="">
-        <ul>
-            <li>gallery</li>
-            <li>memes</li>
-            <li>about</li>
-        </ul>
+        
         <div class="borgers">
             <div class="borger"></div>
             <div class="borger"></div>
@@ -68,7 +64,8 @@
 
             </div>
             <button onclick="changeImage()" class="share-button">change image</button>
-            <button onclick="onDownloadMeme()" class="share-button">save</button>
+           
+            <a onclick="onDownloadMeme(this)" id="download" href="#" download="my-meme.jpg">download</a>
         </div>
 
     </div>
